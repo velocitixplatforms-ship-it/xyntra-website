@@ -24,10 +24,10 @@ export default function Products() {
             <div className="inline-block px-4 py-1.5 bg-brand-50 text-brand-600 rounded-full text-[10px] font-black uppercase tracking-[0.3em]">
               Product Portfolio
             </div>
-            <h1 className="text-5xl md:text-7xl font-display font-black text-slate-900 leading-[0.95] tracking-tighter">
+            <h1 className="text-5xl md:text-7xl font-display font-black text-slate-950 leading-[0.95] tracking-tighter">
               Clinical Quality & <br/><span className="text-transparent bg-clip-text bg-gradient-to-r from-brand-600 to-brand-400">Global Solutions.</span>
             </h1>
-            <p className="text-xl text-slate-500 leading-relaxed max-w-2xl mx-auto font-medium">
+            <p className="text-xl text-slate-700 leading-relaxed max-w-2xl mx-auto font-semibold">
               Advancing global health through a diverse range of certified pharmaceutical and wellness products.
             </p>
           </motion.div>
@@ -54,19 +54,19 @@ export default function Products() {
                       <Icon className="w-8 h-8" />
                       <span className="text-xs font-black uppercase tracking-[0.2em]">{product.category}</span>
                     </div>
-                    <h2 className="text-4xl font-display font-bold text-slate-800 leading-[1.1]">
+                    <h2 className="text-4xl font-display font-black text-slate-900 leading-[1.1]">
                       {product.title}
                     </h2>
-                    <p className="text-lg text-slate-600 leading-relaxed">
+                    <p className="text-lg text-slate-700 font-medium leading-relaxed">
                       {product.description}
                     </p>
                   </div>
 
                   <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
                     {product.items?.map((item, i) => (
-                      <div key={i} className="flex items-center space-x-3 p-4 bg-slate-50 rounded-2xl border border-slate-100/50 shadow-inner">
+                      <div key={i} className="flex items-center space-x-3 p-4 bg-slate-50 rounded-2xl border border-slate-200 shadow-inner">
                         <CheckCircle2 className="w-5 h-5 text-brand-600 shrink-0" />
-                        <span className="text-slate-700 font-medium text-sm">{item}</span>
+                        <span className="text-slate-900 font-bold text-sm">{item}</span>
                       </div>
                     ))}
                   </div>
@@ -97,12 +97,12 @@ export default function Products() {
 
       {/* Trust & Quality Section */}
       <section className="section-container mb-24">
-        <div className="brand-card p-12 bg-slate-900 text-white border-brand-800">
+        <div className="brand-card p-12 border-slate-200 shadow-2xl">
           <div className="max-w-4xl mx-auto space-y-12">
             <div className="space-y-4 text-center">
-              <h2 className="text-xs uppercase font-black text-brand-500 tracking-[0.3em]">Quality Assurance</h2>
-              <h3 className="text-4xl font-display font-bold text-white">Regulatory Excellence</h3>
-              <p className="text-lg text-brand-100/70 leading-relaxed max-w-2xl mx-auto">
+              <h2 className="text-xs uppercase font-black text-brand-600 tracking-[0.3em]">Quality Assurance</h2>
+              <h3 className="text-4xl font-display font-black text-slate-950">Regulatory Excellence</h3>
+              <p className="text-lg text-slate-700 font-semibold leading-relaxed max-w-2xl mx-auto">
                 Quality is at the core of everything we do. We ensure that all products meet stringent international quality standards and regulatory requirements.
               </p>
             </div>
@@ -113,9 +113,11 @@ export default function Products() {
                 { title: 'ISO Compliant', desc: 'Global quality management standards' },
                 { title: 'WHO Standards', desc: 'Meeting world healthcare requirements' }
               ].map((cert, i) => (
-                <div key={i} className="bg-slate-800/50 p-8 rounded-3xl border border-slate-700/50 text-center">
-                  <h4 className="font-display font-bold text-brand-500 text-lg mb-2">{cert.title}</h4>
-                  <p className="text-xs text-slate-400 uppercase tracking-widest">{cert.desc}</p>
+                <div key={i} className="bg-slate-50 p-8 rounded-3xl border border-slate-200 text-center group hover:bg-brand-50 hover:border-brand-100 transition-all duration-300">
+                  <h4 className="font-display font-black text-brand-600 text-lg mb-2">{cert.title}</h4>
+                  <p className="text-[10px] font-black text-slate-500 uppercase tracking-widest leading-relaxed">
+                    {cert.desc}
+                  </p>
                 </div>
               ))}
             </div>
