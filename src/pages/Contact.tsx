@@ -4,10 +4,10 @@ import { COMPANY_DETAILS } from '../constants';
 
 export default function Contact() {
   const socialPlatforms = [
-    { icon: Instagram, label: 'Instagram', href: COMPANY_DETAILS.social.instagram, color: 'hover:text-pink-600' },
-    { icon: Facebook, label: 'Facebook', href: COMPANY_DETAILS.social.facebook, color: 'hover:text-blue-600' },
-    { icon: Twitter, label: 'Twitter', href: COMPANY_DETAILS.social.twitter, color: 'hover:text-sky-500' },
-    { icon: Linkedin, label: 'LinkedIn', href: COMPANY_DETAILS.social.linkedin, color: 'hover:text-blue-700' },
+    { icon: Instagram, label: 'Instagram', href: COMPANY_DETAILS.social.instagram, brandColor: 'group-hover:bg-[#E4405F]', textColor: 'group-hover:text-white', iconColor: 'text-[#E4405F]' },
+    { icon: Facebook, label: 'Facebook', href: COMPANY_DETAILS.social.facebook, brandColor: 'group-hover:bg-[#1877F2]', textColor: 'group-hover:text-white', iconColor: 'text-[#1877F2]' },
+    { icon: Twitter, label: 'Twitter', href: COMPANY_DETAILS.social.twitter, brandColor: 'group-hover:bg-[#1DA1F2]', textColor: 'group-hover:text-white', iconColor: 'text-[#1DA1F2]' },
+    { icon: Linkedin, label: 'LinkedIn', href: COMPANY_DETAILS.social.linkedin, brandColor: 'group-hover:bg-[#0A66C2]', textColor: 'group-hover:text-white', iconColor: 'text-[#0A66C2]' },
   ];
 
   return (
@@ -24,10 +24,10 @@ export default function Contact() {
             <div className="inline-block px-4 py-1.5 bg-brand-50 text-brand-600 rounded-full text-[10px] font-black uppercase tracking-[0.3em]">
               Trade Desk
             </div>
-            <h1 className="text-5xl md:text-7xl font-display font-black text-slate-900 leading-[0.95] tracking-tighter">
+            <h1 className="text-5xl md:text-7xl font-display font-black text-slate-950 leading-[0.95] tracking-tighter">
               Build a Growth <br/><span className="text-transparent bg-clip-text bg-gradient-to-r from-brand-600 to-brand-400">Partnership.</span>
             </h1>
-            <p className="text-xl text-slate-500 leading-relaxed max-w-2xl mx-auto font-medium">
+            <p className="text-xl text-slate-700 leading-relaxed max-w-2xl mx-auto font-semibold">
               Have questions about our products or interested in becoming a distribution partner? Get in touch with our global trade desk.
             </p>
           </motion.div>
@@ -45,13 +45,13 @@ export default function Contact() {
             </div>
 
             <div className="space-y-6">
-              <div className="flex items-start space-x-6 group brand-card p-6 border-slate-100 shadow-sm hover:border-brand-200 transition-all">
+              <div className="flex items-start space-x-6 group brand-card p-6 border-slate-200 shadow-sm hover:border-brand-200 transition-all">
                 <div className="w-14 h-14 bg-slate-50 rounded-xl flex items-center justify-center text-brand-600 group-hover:bg-brand-600 group-hover:text-white transition-colors">
                   <MapPin className="w-7 h-7" />
                 </div>
                 <div>
-                  <h4 className="text-lg font-bold text-slate-800 mb-1">Corporate Office</h4>
-                  <p className="text-sm text-slate-500 max-w-xs leading-relaxed">{COMPANY_DETAILS.address}</p>
+                  <h4 className="text-lg font-black text-slate-900 mb-1">Corporate Office</h4>
+                  <p className="text-sm text-slate-700 font-medium max-w-xs leading-relaxed">{COMPANY_DETAILS.address}</p>
                 </div>
               </div>
 
@@ -86,12 +86,12 @@ export default function Contact() {
                     href={platform.href}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className={`brand-card p-6 flex flex-col items-center justify-center space-y-3 transition-all duration-300 group ${platform.color}`}
+                    className="brand-card p-6 flex flex-col items-center justify-center space-y-3 transition-all duration-500 group hover:border-transparent hover:shadow-2xl hover:-translate-y-2"
                   >
-                    <div className="w-12 h-12 bg-slate-50 rounded-2xl flex items-center justify-center text-slate-400 group-hover:bg-current group-hover:text-white transition-all duration-300">
-                      <platform.icon className="w-6 h-6" />
+                    <div className={`w-14 h-14 bg-slate-50 rounded-[1.25rem] flex items-center justify-center transition-all duration-500 group-hover:rotate-[10deg] ${platform.brandColor} ${platform.textColor} ${platform.iconColor}`}>
+                      <platform.icon className="w-7 h-7" />
                     </div>
-                    <span className="text-[10px] font-black uppercase tracking-widest text-slate-400 group-hover:text-current">
+                    <span className={`text-[10px] font-black uppercase tracking-widest text-slate-600 transition-colors group-hover:text-slate-900`}>
                       {platform.label}
                     </span>
                   </a>
